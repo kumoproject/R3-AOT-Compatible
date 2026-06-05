@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <LangVersion>13</LangVersion>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>1701;1702;1591;1573</NoWarn>
+
+        <!-- NuGet Packaging -->
+        <IsPackable>true</IsPackable>
+        <PackageId>R3Extensions.Interaction</PackageId>
+        <Version>1.0.0</Version>
+        <PackageTags>rx;r3;interaction;mvvm</PackageTags>
+        <Description>Interaction extensions for R3. Provides IInteraction/IInteractionContext patterns for MVVM view interactions.</Description>
+        <RepositoryUrl>https://github.com/kumoproject/R3-AOT-Compatible</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+
+        <IsTrimmable>true</IsTrimmable>
+        <IsAotCompatible>true</IsAotCompatible>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="R3" Version="1.3.1" />
+    </ItemGroup>
+
+    <!-- Link Interaction source files from R3 project -->
+    <ItemGroup>
+        <Compile Include="..\R3\Interactions\IInteraction.cs" Link="IInteraction.cs" />
+        <Compile Include="..\R3\Interactions\IInteractionContext.cs" Link="IInteractionContext.cs" />
+        <Compile Include="..\R3\Interactions\IOutputContext.cs" Link="IOutputContext.cs" />
+        <Compile Include="..\R3\Interactions\Interaction.cs" Link="Interaction.cs" />
+        <Compile Include="..\R3\Interactions\InteractionContext.cs" Link="InteractionContext.cs" />
+        <Compile Include="..\R3\Interactions\UnhandledInteractionException.cs" Link="UnhandledInteractionException.cs" />
+    </ItemGroup>
+
+</Project>
